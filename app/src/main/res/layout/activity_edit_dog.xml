@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ui.edit.EditDogActivity">
+
+    <EditText
+        android:id="@+id/editBreed"
+        style="@style/DogInfo.EditText"
+        android:hint="@string/dog_breed"/>
+
+    <EditText
+        android:id="@+id/editDescription"
+        style="@style/DogInfo.EditText"
+        android:hint="@string/dog_description"/>
+
+    <EditText
+        android:id="@+id/editImageUrl"
+        style="@style/DogInfo.EditText"
+        android:hint="@string/dog_imageurl"
+        android:inputType="textUri"/>
+
+    <Button
+        android:id="@+id/editDogBtn"
+        style="@style/DogInfo.Button"
+        android:text="@string/btn_update_data"/>
+
+</LinearLayout>

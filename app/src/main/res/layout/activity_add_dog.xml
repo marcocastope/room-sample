@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".ui.add.AddDogActivity">
+
+    <EditText
+        android:id="@+id/addDogBreed"
+        android:hint="@string/dog_breed"
+        style="@style/DogInfo.EditText"/>
+
+    <EditText
+        android:id="@+id/addDogDescription"
+        android:hint="@string/dog_description"
+        style="@style/DogInfo.EditText"/>
+
+    <EditText
+        android:id="@+id/addDogImageUrl"
+        android:hint="@string/dog_imageurl"
+        style="@style/DogInfo.EditText"
+        android:inputType="textUri"/>
+
+    <Button
+        android:id="@+id/addDogBtn"
+        style="@style/DogInfo.Button"
+        android:text="@string/btn_save_data"/>
+
+</LinearLayout>
