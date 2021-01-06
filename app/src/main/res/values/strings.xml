@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">DogInfo</string>
+    <string name="add_btn">Add dog info</string>
+    <string name="dog_breed">Breed</string>
+    <string name="dog_description">Description</string>
+    <string name="dog_imageurl">ImageUrl</string>
+    <string name="btn_save_data">Save Data</string>
+    <string name="btn_update_data">Update data</string>
+    <string name="dog_image_item">Image Item</string>
 </resources>
