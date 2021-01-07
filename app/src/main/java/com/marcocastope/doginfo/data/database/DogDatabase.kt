@@ -18,8 +18,7 @@ abstract class DogDatabase : RoomDatabase() {
                 context,
                 DogDatabase::class.java,
                 DATABASE_NAME
-            ).allowMainThreadQueries()
-                .build()
+            ).build()
         }
     }
 

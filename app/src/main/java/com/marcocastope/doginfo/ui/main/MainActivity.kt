@@ -2,9 +2,9 @@ package com.marcocastope.doginfo.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.marcocastope.doginfo.App
 import com.marcocastope.doginfo.R
@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity(), MainContract.ViewInterface {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var fab: FloatingActionButton
-    private lateinit var swipeRefresh: SwipeRefreshLayout
     private val adapter by lazy { DogListAdapter { startActivity<EditDogActivity>(EditDogActivity.ID to it.id) } }
     private lateinit var mainPresenter: MainContract.PresenterInterface
 
@@ -37,18 +36,17 @@ class MainActivity : AppCompatActivity(), MainContract.ViewInterface {
 
     private fun setupPresenter() {
         val localDataSource = App.repository
-        mainPresenter = MainPresenter(this, localDataSource)
+        mainPresenter = MainPresenter(this, localDataSource, lifecycleScope)
     }
 
     private fun initUi() {
         recyclerView = findViewById(R.id.mainRecyclerview)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
-        swipeRefresh = findViewById(R.id.swipeRefresh)
-        fab = findViewById(R.id.fab)
     }
 
     private fun initListeners() {
+        fab = findViewById(R.id.fab)
         fab.setOnClickListener { startActivity<AddDogActivity>() }
     }
 

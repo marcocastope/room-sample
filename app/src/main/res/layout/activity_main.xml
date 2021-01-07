@@ -6,19 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainActivity">
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefresh"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mainRecyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/mainRecyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:listitem="@layout/item_dog_main"/>
-
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_dog_main"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

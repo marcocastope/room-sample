@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.marcocastope.doginfo.App
 import com.marcocastope.doginfo.R
 import com.marcocastope.doginfo.ui.toast
@@ -27,7 +28,7 @@ class AddDogActivity : AppCompatActivity(), AddContract.ViewInterface {
 
     private fun setupPresenter() {
         val localDataSource = App.repository
-        addPresenter = AddPresenter(this, localDataSource)
+        addPresenter = AddPresenter(this, localDataSource, lifecycleScope)
     }
 
     private fun initUi() {

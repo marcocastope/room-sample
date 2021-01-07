@@ -1,10 +1,11 @@
 package com.marcocastope.doginfo.ui.edit
 
 import android.app.Activity
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.marcocastope.doginfo.App
 import com.marcocastope.doginfo.R
 import com.marcocastope.doginfo.data.model.Dog
@@ -39,7 +40,7 @@ class EditDogActivity : AppCompatActivity(), EditContract.ViewInterface {
 
     private fun setupPresenter() {
         val localDataSource = App.repository
-        editPresenter = EditPresenter(this, localDataSource)
+        editPresenter = EditPresenter(this, localDataSource, lifecycleScope)
     }
 
     private fun initUi() {
